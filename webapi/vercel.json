@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "webapi/*.csproj",
+        "use": "@vercel/dotnet-builder"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "webapi/{1}"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "webapi/"
+      }
+    ]
+}
+  
